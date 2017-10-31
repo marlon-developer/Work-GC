@@ -1,4 +1,3 @@
-
 package GUI;
 
 import Matriz.Mat3;
@@ -22,7 +21,16 @@ public class Cubo2D extends javax.swing.JFrame {
     Mat4 m4Camera = new Mat4();
     Mat4 m4Projecao = new Mat4();
     Vet4 vetPontos[] = new Vet4[8];
+    
+    
+    float m00, m01, m02, m03,
+          m10, m11, m12, m13, 
+          m20, m21, m22, m23,
+          m30, m31, m32, m33;
 
+    Vet2 p1final,p2final,p3final,p4final,p5final,p6final,p7final,p8final;
+    
+    
     JSpinner spinner = new JSpinner();
 
     public Cubo2D() {
@@ -526,10 +534,13 @@ public class Cubo2D extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btAtulizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAtulizarActionPerformed
+        
+        
         BufferedImage buffer = new BufferedImage(400, 400, BufferedImage.TYPE_INT_RGB);
         //Extrai o objeto Graphics2D dela, pois é através dele que desenhamos
         Graphics2D g = buffer.createGraphics();
-                        
+        
+        
         //CUBO
         //Pegando Valores da Translacao
         float tx = Float.parseFloat(sCuboTranslacaoTx.getValue().toString());
